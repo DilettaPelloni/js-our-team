@@ -1,3 +1,4 @@
+//creo un array di oggetti, ciascuno dei quali è un membro del team
 const teamMembers = [
     {
         name: 'Wayne Barnett',
@@ -32,32 +33,66 @@ const teamMembers = [
 ];
 
 
+
+
+//creo tante card quanti sono gli elementi di teamMembers
 for(let i = 0; i < teamMembers.length; i++) {
+    //prendo la card-box
+    const cardBox = document.getElementById('card-box');
 
-    const h3 = document.createElement('h3');
-    const main = document.querySelector('main');
+    //creo la card
+    const card = document.createElement('div');
+    card.classList.add('card');
 
-    h3.innerText = 'Membro n°: ' + (i + 1);
+    //creo gli elementi da mettere nella card
+    const img = document.createElement('img');
+    const h4 = document.createElement('h4');
+    const p = document.createElement('p');
 
-    main.append(h3);
+    //in img metto l'immagine
+    img.setAttribute('src', `img/${teamMembers[i]['img']}`);
 
-    for(let key in teamMembers[i]) {
+    //in h4 metto il nome
+    h4.innerText = teamMembers[i]['name'];
 
-        const p = document.createElement('p');
+    //in p metto il ruolo
+    p.innerText = teamMembers[i]['role'];
 
-        if (key == 'img') {
-            p.innerText = key + ':';
-            const img = document.createElement('img');
-            img.setAttribute('src', `img/${teamMembers[i][key]}`);
-            main.append(p);
-            main.append(img);
-        }
-        else {
-            p.innerText = key + ': ' + teamMembers[i][key];
-            main.append(p);
-        }
-    }
-
-    const hr = document.createElement('hr');
-    main.append(hr);
+    //li metto nella card
+    card.append(img);
+    card.append(h4);
+    card.append(p);
+    //metto la card nella box
+    cardBox.append(card);
 }
+
+
+// for(let i = 0; i < teamMembers.length; i++) {
+
+//     const h3 = document.createElement('h3');
+//     const main = document.querySelector('main');
+
+//     h3.innerText = 'Membro n°: ' + (i + 1);
+
+//     main.append(h3);
+
+//     for(let key in teamMembers[i]) {
+
+//         const p = document.createElement('p');
+
+//         if (key == 'img') {
+//             p.innerText = key + ':';
+//             const img = document.createElement('img');
+//             img.setAttribute('src', `img/${teamMembers[i][key]}`);
+//             main.append(p);
+//             main.append(img);
+//         }
+//         else {
+//             p.innerText = key + ': ' + teamMembers[i][key];
+//             main.append(p);
+//         }
+//     }
+
+//     const hr = document.createElement('hr');
+//     main.append(hr);
+// }
