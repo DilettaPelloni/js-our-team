@@ -65,34 +65,3 @@ for(let i = 0; i < teamMembers.length; i++) {
     //metto la card nella box
     cardBox.append(card);
 }
-
-
-// for(let i = 0; i < teamMembers.length; i++) {
-
-//     const h3 = document.createElement('h3');
-//     const main = document.querySelector('main');
-
-//     h3.innerText = 'Membro n°: ' + (i + 1);
-
-//     main.append(h3);
-
-//     for(let key in teamMembers[i]) {
-
-//         const p = document.createElement('p');
-
-//         if (key == 'img') {
-//             p.innerText = key + ':';
-//             const img = document.createElement('img');
-//             img.setAttribute('src', `img/${teamMembers[i][key]}`);
-//             main.append(p);
-//             main.append(img);
-//         }
-//         else {
-//             p.innerText = key + ': ' + teamMembers[i][key];
-//             main.append(p);
-//         }
-//     }
-
-//     const hr = document.createElement('hr');
-//     main.append(hr);
-// }
