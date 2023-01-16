@@ -48,3 +48,27 @@ for(let i = 0; i < teamMembers.length; i++) {
     console.log('-------------------')
 
 }
+
+// MILESTONE 2:
+// Stampare le stesse informazioni su DOM sottoforma di stringhe
+
+for(let i = 0; i < teamMembers.length; i++) {
+
+    const h3 = document.createElement('h3');
+    const main = document.querySelector('main');
+
+    h3.innerText = 'Membro n°: ' + (i + 1);
+
+    main.append(h3)
+
+    for(let key in teamMembers[i]) {
+
+        const p = document.createElement('p');
+        p.innerText = key + ': ' + teamMembers[i][key];
+        main.append(p)
+    }
+
+    const hr = document.createElement('hr');
+    main.append(hr);
+
+}
