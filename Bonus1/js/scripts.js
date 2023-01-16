@@ -1,6 +1,3 @@
-// MILESTONE 0:
-// Creare l'array di oggetti con le informazioni fornite
-
 const teamMembers = [
     {
         name: 'Wayne Barnett',
@@ -34,23 +31,6 @@ const teamMembers = [
     }
 ];
 
-// MILESTONE 1:
-// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
-
-for(let i = 0; i < teamMembers.length; i++) {
-
-    console.log('Membro n°: ' + (i + 1));
-
-    for(let key in teamMembers[i]) {
-        console.log(key + ': ' + teamMembers[i][key]);
-    }
-
-    console.log('-------------------')
-
-}
-
-// MILESTONE 2:
-// Stampare le stesse informazioni su DOM sottoforma di stringhe
 
 for(let i = 0; i < teamMembers.length; i++) {
 
@@ -59,16 +39,25 @@ for(let i = 0; i < teamMembers.length; i++) {
 
     h3.innerText = 'Membro n°: ' + (i + 1);
 
-    main.append(h3)
+    main.append(h3);
 
     for(let key in teamMembers[i]) {
 
         const p = document.createElement('p');
-        p.innerText = key + ': ' + teamMembers[i][key];
-        main.append(p)
+
+        if (key == 'img') {
+            p.innerText = key + ':';
+            const img = document.createElement('img');
+            img.setAttribute('src', `img/${teamMembers[i][key]}`);
+            main.append(p);
+            main.append(img);
+        }
+        else {
+            p.innerText = key + ': ' + teamMembers[i][key];
+            main.append(p);
+        }
     }
 
     const hr = document.createElement('hr');
     main.append(hr);
-
 }
