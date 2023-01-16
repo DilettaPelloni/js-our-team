@@ -15,7 +15,7 @@ const teamMembers = [
     {
         name: 'Walter Gordon',
         role: 'Office Manager',
-        img: ''
+        img: 'walter-gordon-office-manager.jpg'
     },
     {
         name: 'Angela Lopez',
